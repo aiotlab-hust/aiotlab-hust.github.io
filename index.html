@@ -6,11 +6,49 @@ body {
    margin: 0;
    padding: 0;
 }
+
+@media (max-width:481px) {
+    img.phone {
+        display: visibility;
+    }
+    img.tablet {
+        display: none;
+    }
+    img.desktop {
+        display: none;
+    }
+}
+
+@media (min-width:482px) and (max-width:961px) {
+    img.tablet {
+        display: visibility;
+    }
+    img.phone {
+        display: none;
+    }
+    img.desktop {
+        display: none;
+    }
+}
+
+@media (min-width:962px) {
+    img.desktop {
+        display: visibility;
+    }
+    img.phone {
+        display: none;
+    }
+    img.tablet {
+        display: none;
+    }
+}
 </style>
 
 <body>
 
-<img style="width:100%;" src="images/desktop.svg">
+<img class="phone" style="width:100%;" src="images/phone.svg">
+<img class="tablet" style="width:100%;" src="images/ipad.svg">
+<img class="desktop" style="width:100%;" src="images/desktop.svg">
 
 </body>
 </html>
