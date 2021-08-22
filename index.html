@@ -16,7 +16,7 @@ body {
    padding: 0;
 }
 
-@media (max-width:481px) {
+/* @media (max-width:481px) {
     img.phone {
         display: visibility;
     }
@@ -50,14 +50,31 @@ body {
     img.tablet {
         display: none;
     }
-}
+} */
 </style>
 
 <body>
 
-<img class="phone" style="width:100%;" src="images/phone.svg" >
-<img class="tablet" style="width:100%;" src="images/ipad.svg" >
-<img class="desktop" style="width:100%;" src="images/desktop.svg" >
+<!-- <img class="phone" style="width:100%;" src="images/phone.svg" >
+<img class="tablet" style="width:100%;" src="images/ipad.svg">
+<img class="desktop" style="width:100%;" src="images/desktop.svg" > -->
+
+
+<script>
+const deviceType = () => {
+    const ua = navigator.userAgent;
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+        return `<img class="tablet" style="width:100%;" src="images/ipad.svg">`;
+    }
+    else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+        return `<img class="phone" style="width:100%;" src="images/phone.svg">`;
+    }
+    return `<img class="desktop" style="width:100%;" src="images/desktop.svg">`;
+};
+
+document.write(deviceType());
+</script>
+
 
 </body>
 </html>
